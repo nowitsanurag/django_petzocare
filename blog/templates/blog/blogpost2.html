@@ -1,0 +1,81 @@
+{% extends 'base.html' %} {% load static %}
+{%block body%}
+<head>
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.5/examples/blog/blog.css" rel="stylesheet">
+
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <!-- facebook comment script  -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0" nonce="x0JEBDzc"></script>
+    
+    
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+     
+    </head>
+    
+    <div class="container">
+        <div style="padding-top: 100px" class="row mt-4">
+            <div class="col-md-8 blog-main">
+                <h3 class="pb-4 mb-4 font-italic border-bottom">
+                    {{post.title}}
+                </h3>
+                <div class="blog-post">
+                    <h2 class="blog-post-title">{{post.heading1}}</h2>
+                    <p class="blog-post-meta">{{post.publishDate}} by <a href="#">{{post.author}}</a></p>
+                    <!-- /.fb like-post -->
+                    <div class="fb-like" data-href="http://192.168.1.9:8000/blog/blogpost/{{post.postId}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
+
+                    <h2 class="my-4">{{post.heading0}}</h2>
+                    <p>{{post.body1}}</p>
+                    
+                    <img src="/static/media/{{post.thumbnail}}" class="img-fluid">
+
+                    <h2>{{post.heading2}}</h2>
+                    <p>{{post.body2}}</p>
+                    <h2>{{post.heading3}}</h2>
+                    <p>{{post.body3}}</p>
+
+                    <!-- /.blog-comments -->
+                    <h2 class="blog-post-title">Comments</h2>
+                    <form action="/blog/postComment" method="post">
+                        {% csrf_token %}
+                        <input type="text" name="comment" placeholder="Enter comment here">
+                        <input type="hidden" name="postSno" value="{{post.serialNumber}}" >
+                        <input type="submit" value="Submit">
+                  </form>
+                    <div class="row my-3">
+                        <div style="font-size: 15px;" class="col-md-2 bg-success"> image here</div>
+                        <div style="font-size: 15px;" class="col-md-10 bg-primary"> comment here</div>
+                    </div>
+                    <div class="row my-3">
+                        <div style="font-size: 15px;" class="col-md-2 bg-success"> image here</div>
+                        <div style="font-size: 15px;" class="col-md-10 bg-primary"> comment here</div>
+                    </div>
+                </div>
+                
+            </div><!-- /.blog-main -->
+            <aside class="col-md-4 blog-sidebar">
+
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">About</h4>
+                    <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+                    <!-- /fb share -->
+                    <div class="my-3 fb-share-button" data-href="http://127.0.0.1:8000/blog/blogpost/{{post.postId}}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2Fblogpost%2F4&src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                  </div>
+
+                <div class="p-4">
+                    <h4 class="font-italic">Elsewhere</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="https://www.instagram.com/petzocare/">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="https://www.linkedin.com/company/petzocare/about/">Linkedin</a></li>
+                    </ol>
+                </div>
+            </aside><!-- /.blog-sidebar -->
+        </div>
+    </div>
+{%endblock%}

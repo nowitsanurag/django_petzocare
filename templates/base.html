@@ -1,0 +1,176 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Petzocare</title>
+    <meta property="og:title" content="Petzocare" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <script type="text/javascript"> ... </script> -->
+
+    <link rel="stylesheet" href="{% static '/accounts/style.css'%}"/>
+    <link rel="stylesheet" href="{% static '/accounts/home.css'%}"/>
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Titillium Web;
+        font-size: 16px;
+      }
+    
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-scheme-green100);
+        background-color: var(--dl-color-scheme-yellow20);
+    
+      }
+    </style>
+  </head>
+<body>
+<div class="home-container">
+<div class="navbar-container">
+  <div class="max-width">
+    <div class="home-logo">
+      <svg viewBox="0 0 1024 1024" class="home-icon">
+        <path
+          d="M740 634l34 34t17 18 16 19 15 19 13 20 10 22 6 23 2 24-1 25q-22 84-100 100-14 2-97-8t-139-10h-8q-56 0-139 10t-97 8q-78-16-100-100-6-40 14-82t37-60 61-62q20-22 53-62t53-62q36-44 74-56 8-4 14-4 12-2 34-2 24 0 34 2 6 0 14 4 38 12 74 56 18 22 52 62t54 62zM726 406q0-44 31-76t75-32 75 32 31 76-31 75-75 31-75-31-31-75zM534 234q0-44 31-75t75-31 75 31 31 75-31 76-75 32-75-32-31-76zM278 234q0-44 31-75t75-31 75 31 31 75-31 76-75 32-75-32-31-76zM86 406q0-44 31-76t75-32 75 32 31 76-31 75-75 31-75-31-31-75z"
+        ></path>
+        
+      </svg>
+      <span class="brandName">
+        <a href="/">
+          <span class="home-text001">Petzo</span>
+          <span>Care</span>
+        </a>
+      </span>
+      
+    </div>
+    <div class="home-links">
+      <span class="home-text003 navbarLink">
+        <a href="{% url 'howItWork' %}">How it works</a>
+      </span>
+      <span class="home-text004 navbarLink">
+        <a href="{% url 'service' %}">Features</a>
+      </span>
+      <span class="home-text005 navbarLink">
+        <a href="/blog">Blog</a>
+
+      </span>
+      <span class="home-text006 navbarLink">Pricing</span>
+      <button class="button-secondary button">
+        <a href="{% url 'login' %}">Log in</a>
+      </button>
+      <button class="button button-primary">
+        <a href="{% url 'signup' %}">Get started</a>
+      </button>
+    </div>
+    <div class="home-burger-menu navbar-burger-menu">
+      <svg viewBox="0 0 1024 1024" class="home-icon02">
+        <path
+          d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</div>
+
+{% block body %} {% endblock body %}
+
+<footer class="home-footer center">
+  <div class="home-links-container">
+    <div class="home-container12">
+      <div class="footer-column">
+        <span class="home-text084">Product</span>
+        <span class="home-text085">
+          <a href="{% url 'howItWork' %}">How it works</a>
+        </span>
+        <span class="home-text086">
+          <a href="{% url 'service' %}">Features</a>
+        </span>
+        <span class="home-text087">Pricing</span>
+        <span class="home-text088">
+          <a href="/blog">Blog</a>
+        </span>
+        <span>FAQ</span>
+      </div>
+      <div class="footer-column">
+        <span class="home-text090">App</span>
+        <span class="home-text091">Download iOS app</span>
+        <span class="home-text092">Download Android app</span>
+        <span class="home-text093">Log in to Portal</span>
+        <span class="home-text094">Administrative</span>
+        <span>Legal</span>
+      </div>
+      <div class="footer-column">
+        <span class="home-text096">Company</span>
+        <span class="home-text097">About us</span>
+        <span class="home-text098">Culture</span>
+        <span class="home-text099">Code of conduct</span>
+        <span class="home-text100">Careers</span>
+        <span class="home-text101">News</span>
+        <span>Contact</span>
+      </div>
+      <div class="footer-column">
+        <span class="home-text103">Invest</span>
+        <span class="home-text104">Commodity</span>
+        <span class="home-text105">Savings</span>
+        <span class="home-text106">
+          <span>Taxes and fees</span>
+          <br />
+          <span></span>
+        </span>
+        <span class="home-text109"><span>Currency exchange</span></span>
+        <span>Community</span>
+      </div>
+      <div class="footer-column">
+        <span class="home-text112">Security</span>
+        <span class="home-text113">Security status</span>
+        <span class="home-text114">ISO</span>
+        <span class="home-text115">System status</span>
+        <span>Customer Help</span>
+      </div>
+      <div class="footer-column">
+        <span class="home-text117">Follow</span>
+        <span class="home-text118">Instagram</span>
+        <span class="home-text119">Twitter</span>
+        <span class="home-text120">Facebook</span>
+        <span class="home-text121">Tik Tok</span>
+        <span class="home-text122">Linkedln</span>
+        <span>Youtube</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>
+
+
+
